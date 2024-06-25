@@ -1,6 +1,5 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
-
-const token = process.env.SERVER_TOKEN;
+const token = process.env.NEXT_PUBLIC_SERVER_TOKEN;
 
 const createApolloClient = () => {
     return new ApolloClient({
