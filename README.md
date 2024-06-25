@@ -41,3 +41,9 @@ In the future a hooks/ or types/ folder may be added for shared types and hooks.
 I have tried to utilize some components as server components and keep a clear separation between client and server components so the least amount of code is sent to the client. This could be improved, but is something I would need to read up one since I don't have as much experience with using server components with graphql.
 
 In the future I would also rely upon css for some of the style changes on state changes instead of using javascript.
+
+## Considerations
+
+I have somewhat neglected error handling in this current approach, but I would like to add it in the future.
+
+A number of the packages could surely be removed and replaced with local implementations, but I wanted to keep the code as simple as possible and create a product quickly.
