@@ -1,8 +1,8 @@
 "use client";
 
-import { Stock } from "@/api/stocks";
+import { Stock as StockType } from "@/api/stocks";
 import { useStocks } from "./hooks";
-import Link from "next/link";
+import Stock from "../Stock/Stock";
 
 export default function Stocks() {
     const { loading, error, data: stocks } = useStocks();
@@ -29,20 +29,8 @@ export default function Stocks() {
                             </tr>
                         </thead>
                         <tbody>
-                            {stocks?.map((stock: Stock) => (
-                                <tr
-                                    className="border-b hover:bg-muted/20"
-                                    key={stock.symbol}
-                                >
-                                    <td className="px-4 py-3 font-medium">
-                                        <Link href={`/stocks/${stock.symbol}`}>
-                                            {stock.symbol}
-                                        </Link>
-                                    </td>
-                                    <td className="px-4 py-3 text-right font-medium">
-                                        ${stock.amountUsdValue}
-                                    </td>
-                                </tr>
+                            {stocks?.map((stock: StockType) => (
+                                <Stock stock={stock} key={stock.symbol} />
                             ))}
                         </tbody>
                     </table>
